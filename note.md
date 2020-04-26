@@ -25,3 +25,101 @@
 > 프로그램이 동작하는 상태에서 완전히 해당 내용을 끝내고 다음으로 제어를 넘기는 방식을 `동기`,  
 > 동작이 끝나지 않은 상태에서도 제어권을 넘긴 후 프로그램을 계속 진행하면 `비동기식`이라고 합니다.
 
+## 2020-04-26 예외 처리
+
+프로그램이 실행되고 있는 런타임시에 에러가 발생할 경우 처리할 수 있는 프로그램의 구간
+
+```javascript
+try {
+  // 예외상황이 발생할 수 있는 구간
+} catch (e) {
+  // 예외상황이 발생하였을 경우 처리되는 구간
+} finally {
+  // 예외상황이 발생하던 발생하지 않아도 처리되는 구간 (생략 가능)
+}
+```
+
+## 이벤트 루프 (Event Loop)
+
+Node.js 에서는 많은 이벤트를 빠르게 처리할 수 있습니다.  
+Node.js 기반으로 만들어진 서버가 가동되면 변수들을 초기화하고 함수를 선언하고  
+이벤트가 발생할 때까지 기다립니다.  
+이벤트가 감지되었을 때 call back 함수를 호출합니다.
+
+### 옵저버
+
+이벤트를 대기하는 함수들이 옵저버 역할을 합니다.  
+옵저버들이 이벤트들을 기다리다가 이벤트가 발생하면 이벤트를 처리하는 함수가 실행됩니다.
+
+### events
+
+이벤트 위주의 프로그램을 작성할 때 사용하는 모듈입니다.
+
+### 메소드
+
+eventEmitter.on() : 지정한 이벤트의 리스너를 추가합니다.  
+eventEmitter.once() : 지정한 이벤트의 리스너를 추가하지만 한 번 실행된 후에 자동으로 제거됩니다.  
+eventEmitter.removelistener() : 지정한 이벤트에 대한 리스너를 제거합니다.
+
+## 시스템 이벤트 생성
+
+process 객체는 노드에서 항상 사용할 수 있는 객체입니다.  
+on()과 emit() 메소드를 바로 사용할 수 있습니다.  
+process 객체의 on() 메소드를 호출하면서 이벤트 이름을 exit 로 지정하면,  
+내부적으로 프로세스가 끝날 때를 알 수 있습니다.
+
+```javascript
+process.on("exit", function () {
+  console.log("exit 이벤트 발생");
+});
+
+process.exit(); // 프로그램 종료
+```
+
+## http 모듈
+
+Node.js 에서 가장 기본적이고 중요한 서버 객체입니다.  
+http 모듈의 createServer() 메소드를 사용하여 server 객체를 생성합니다.
+
+1.  **server 객체**
+
+    ### 메소드
+
+    listen() : 서버를 실행하고 클라이언트를 기다립니다.
+    close() : 서버를 종료합니다.
+
+    ### 이벤트
+
+    requset : 클라이언트가 서버에 요청할 때 발생하는 이벤트입니다.
+    connection : 클라이언트가 접속할 때 발생하는 이벤트입니다.
+    close : 서버가 종료될 때 발생하는 이벤트입니다.
+
+2.  **response 객체** : 서버에서 클라이언트로 응답 메세지를 전송시켜주는 객체
+
+    ### 메소드
+
+    writeHead() : 응답 헤더를 작성합니다.
+    end() : 응답 본문을 작성합니다.
+
+    ### MIME 형식
+
+    text/plain : 일반적인 text 파일  
+    text/html : html  
+    text/css : css  
+    text/xml : xml 형식 파일  
+    image/jpeg : ...  
+    ...
+
+3.  **request 객체** : 클라이언트가 서버에게 전달하는 메세지를 담는 객체
+
+    ### 속성
+
+    method : 클라이언트 요청 방식을 나타냅니다.  
+    url : 클라이언트가 요청한 URL을 나타냅니다.  
+    headers : 요청 메세지 헤더를 나타냅니다.
+
+    `http://www.asd.com/membermember`  
+    <-------url------><--pathname-->  
+    req.url : "http://www.asd.com/membermeber"  
+    url.parse("http://www.asd.com/membermeber") -> url 형태의 분석  
+    url.parse("http://www.asd.com/membermeber").pathname // member  
