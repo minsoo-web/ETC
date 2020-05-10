@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>글 보기</h2>
+    <hr />
+    <p><span>작성자 : </span> <strong> <%= name %></strong></p>
+    <div>
+      <span>내용 : </span>
+      <p><%= content %></p>
+    </div>
+    <img src="../uploads/<%= filename %>" alt="올린 사진" />
+    <p>
+      <%= filename %>
+    </p>
+  </body>
+</html>
