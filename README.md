@@ -1,4 +1,4 @@
-koreaIT 학원에서 진행하는 NodeJS 수업 자료입니다.
+koreaIT 학원에서 진행하는 수업 자료입니다.
 
 # NodeJs
 
@@ -29,3 +29,10 @@ koreaIT 학원에서 진행하는 NodeJS 수업 자료입니다.
 - 쿠키 
 - 세션
 - 파일 업로드 (multer)
+
+# Vue.js 
+
+## Day1 
+
+- CDN을 이용한 첫번째 Vue app 
+- CDN을 이용한 첫번째 컴포넌트
