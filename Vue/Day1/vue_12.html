@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h2 v-on:click="name='미세먼지 없음'">{{name}}</h2>
+      <h2 v-on:click="handleEvent">{{info}}</h2>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          name: "미세먼지 있음?",
+          info: "이벤트 정보",
+        },
+        methods: {
+          handleEvent(e) {
+            this.info = e.type;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <table border="1" width="600px">
+        <tr>
+          <th>번호</th>
+          <th>도시</th>
+          <th>동작</th>
+        </tr>
+        <tr v-for="(city,idx) in cities" v-bind:key="city">
+          <td>{{idx}}</td>
+          <td>{{city}}</td>
+          <td>
+            <button
+              v-on:click="handleEvent(city)"
+              v-on:mouseover="handleMultiEvent(city,$event)"
+              v-on:mouseleave="handleMultiEvent(city,$event)"
+            >
+              선택
+            </button>
+          </td>
+        </tr>
+      </table>
+      <h3>{{message}}</h3>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: function () {
+          return {
+            message: "",
+            cities: ["서울", "부산", "대구"],
+          };
+        },
+        methods: {
+          handleEvent(city) {
+            this.message = `선택된 도시 : ${city}`;
+          },
+          handleMultiEvent(city, $event) {
+            console.log($event.type);
+            if ($event.type === "mouseover") {
+              this.message = "마우스오버 발생";
+            } else {
+              this.message = "";
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

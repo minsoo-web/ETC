@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>컴포넌트 사용을 안 한 카운터</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+      #app {
+        background: cyan;
+        padding: 10px;
+      }
+      p {
+        color: red;
+        font-weight: 800;
+      }
+      button {
+        background-color: darkcyan;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>
+        저희 은행을 방문해주셔서 감사합니다.
+      </h1>
+      <p>
+        현재 대기자 수 : {{number}} 입니다.
+      </p>
+      <button v-on:click="increase">대기표 뽑기</button>
+      <button v-on:click="decrease">서비스 처리 완료</button>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          number: 0,
+          message: "",
+        },
+        methods: {
+          increase() {
+            this.number++;
+          },
+          decrease() {
+            this.number !== 0
+              ? this.number--
+              : (this.message = "대기자 수가 없습니다. ");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

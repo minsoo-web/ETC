@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <our-header></our-header>
+      <our-body></our-body>
+      <our-footer></our-footer>
+    </div>
+    <script>
+      Vue.component("our-header", {
+        template: "<div>header</div>",
+      });
+      Vue.component("our-body", {
+        template: "<div>body</div>",
+      });
+      Vue.component("our-footer", {
+        template: "<div>footer</div>",
+      });
+      new Vue({
+        el: "#app",
+      });
+    </script>
+  </body>
+</html>
