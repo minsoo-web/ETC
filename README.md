@@ -42,4 +42,4 @@ koreaIT 학원에서 진행하는 수업 자료입니다.
 ## Day2
 
 - router 실습 
-- 
+- vue cli 설치 및 실습 
