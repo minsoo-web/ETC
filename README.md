@@ -19,27 +19,34 @@ koreaIT 학원에서 진행하는 수업 자료입니다.
 
 ## Day 3
 
-- express 
-- router / route 
-- 404 handler 
-- Ejs 
+- express
+- router / route
+- 404 handler
+- Ejs
 
 ## Day 4
 
-- 쿠키 
+- 쿠키
 - 세션
 - 파일 업로드 (multer)
 
-# Vue.js 
+# Vue.js
 
-## Day1 
+## Day1
 
-- CDN을 이용한 첫번째 Vue app 
+- CDN을 이용한 첫번째 Vue app
 - CDN을 이용한 첫번째 컴포넌트
-- 컴포넌트 간의 데이터 전달 방법 
+- 컴포넌트 간의 데이터 전달 방법
 - Vue 디렉티브 실습
 
 ## Day2
 
-- router 실습 
-- vue cli 설치 및 실습 
+- router 실습
+- vue cli 설치 및 실습
+
+# Nuxt.js
+
+## Day1
+
+- nuxt 소개 및 vue/cli 를 통한 프로젝트 설치
+- componets 와 라우팅에 대한 실습
