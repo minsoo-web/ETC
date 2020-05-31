@@ -50,3 +50,7 @@ koreaIT 학원에서 진행하는 수업 자료입니다.
 
 - nuxt 소개 및 vue/cli 를 통한 프로젝트 설치
 - componets 와 라우팅에 대한 실습
+
+## Day2
+
+- Node.js를 통해 메일 보내는 방법

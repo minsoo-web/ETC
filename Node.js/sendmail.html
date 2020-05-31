@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>여러개의 첨부파일</title>
+  </head>
+  <body>
+    <h2>메일 보내기</h2>
+    <form action="/sendmail" method="POST">
+      <p>받는 이 : <input type="text" name="to" /></p>
+      <p>제목 : <input type="text" name="title" /></p>
+      <p>내용 : <textarea name="content" cols="40" rows="5"> </textarea></p>
+      <p>파일 : <input type="file" name="file" /></p>
+      <p><input type="submit" value="전송" /></p>
+    </form>
+  </body>
+</html>
